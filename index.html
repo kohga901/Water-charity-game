@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clean Water Pipeline</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">charity: water inspired puzzle</p>
+      <h1>Clean Water Pipeline 💧</h1>
+      <p class="subtitle">
+        Rotate the pipes to bring clean water from the source to the village.
+        Solve it in as few clicks as possible.
+      </p>
+    </div>
+  </header>
+
+  <main class="game-shell">
+    <section class="info-card">
+      <div class="stat">
+        <span class="stat-label">Clicks</span>
+        <span id="clicks" class="stat-value">0</span>
+      </div>
+
+      <div class="controls">
+        <button id="newPuzzleBtn" class="primary-btn" type="button">New Puzzle</button>
+        <button id="resetBtn" class="secondary-btn" type="button">Reset Current Puzzle</button>
+      </div>
+    </section>
+
+    <section class="board-card">
+      <div id="board" aria-label="Puzzle board"></div>
+      <p id="message" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="about-card">
+      <h2>How it works</h2>
+      <ul>
+        <li>Click a pipe tile to rotate it.</li>
+        <li>Rocks are obstacles and cannot be rotated.</li>
+        <li>Your goal is to connect the water source to the village.</li>
+        <li>Lower click count = better solution.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
