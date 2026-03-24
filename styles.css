@@ -19,10 +19,9 @@
 
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   color: var(--cw-dark);
-  background:
-    linear-gradient(to bottom, #fffdf6 0%, #f8fbff 100%);
+  background: linear-gradient(to bottom, #fffdf6 0%, #f8fbff 100%);
   min-height: 100vh;
 }
 
@@ -69,7 +68,8 @@ body {
 
 .info-card,
 .board-card,
-.about-card {
+.about-card,
+.site-footer {
   background: var(--cw-white);
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 18px;
@@ -78,10 +78,15 @@ body {
 
 .info-card {
   padding: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
   gap: 16px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 18px;
+  align-items: end;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -100,6 +105,17 @@ body {
   font-size: 2rem;
   font-weight: 800;
   color: var(--cw-blue);
+}
+
+.difficulty-select {
+  min-width: 150px;
+  border: 2px solid var(--cw-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+  font-weight: 600;
+  background: var(--cw-white);
+  color: var(--cw-dark);
 }
 
 .controls {
@@ -130,9 +146,17 @@ body {
 }
 
 .primary-btn:hover,
-.secondary-btn:hover {
+.secondary-btn:hover,
+.difficulty-select:hover {
   transform: translateY(-1px);
   opacity: 0.95;
+}
+
+.milestone {
+  min-height: 24px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--cw-blue);
 }
 
 .board-card {
@@ -233,6 +257,26 @@ body {
   line-height: 1.6;
 }
 
+.site-footer {
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.site-footer a {
+  color: var(--cw-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 .confetti {
   position: fixed;
   top: -20px;
@@ -263,7 +307,7 @@ body {
     border-radius: 12px;
   }
 
-  .info-card {
+  .stats-row {
     flex-direction: column;
     align-items: stretch;
   }
@@ -273,7 +317,8 @@ body {
   }
 
   .primary-btn,
-  .secondary-btn {
+  .secondary-btn,
+  .difficulty-select {
     flex: 1 1 180px;
   }
 }

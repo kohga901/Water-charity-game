@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clean Water Pipeline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -20,15 +26,33 @@
 
   <main class="game-shell">
     <section class="info-card">
-      <div class="stat">
-        <span class="stat-label">Clicks</span>
-        <span id="clicks" class="stat-value">0</span>
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-label">Clicks</span>
+          <span id="clicks" class="stat-value">0</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-label">Water Score</span>
+          <span id="score" class="stat-value">0</span>
+        </div>
+
+        <div class="stat">
+          <span class="stat-label">Difficulty</span>
+          <select id="difficulty" class="difficulty-select" aria-label="Select difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
       </div>
 
       <div class="controls">
         <button id="newPuzzleBtn" class="primary-btn" type="button">New Puzzle</button>
         <button id="resetBtn" class="secondary-btn" type="button">Reset Current Puzzle</button>
       </div>
+
+      <p id="milestone" class="milestone" aria-live="polite"></p>
     </section>
 
     <section class="board-card">
@@ -45,7 +69,32 @@
         <li>Lower click count = better solution.</li>
       </ul>
     </section>
+
+    <footer class="site-footer">
+      <p>
+        Learn more about the mission at
+        <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">charity: water</a>
+        or
+        <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer">donate here</a>.
+      </p>
+    </footer>
   </main>
+
+  <audio id="soundButton" preload="auto">
+    <source src="sounds/button-click.wav" type="audio/wav" />
+  </audio>
+
+  <audio id="soundCollect" preload="auto">
+    <source src="sounds/collect.mp3" type="audio/mpeg" />
+  </audio>
+
+  <audio id="soundMiss" preload="auto">
+    <source src="sounds/miss.mp3" type="audio/mpeg" />
+  </audio>
+
+  <audio id="soundWin" preload="auto">
+    <source src="sounds/win.mp3" type="audio/mpeg" />
+  </audio>
 
   <script src="script.js"></script>
 </body>
